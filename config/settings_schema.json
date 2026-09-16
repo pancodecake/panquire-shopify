@@ -6,10 +6,10 @@
       { "type": "checkbox", "id": "pq_real_product_images", "label": "Enable real product images on Panquire homepage", "default": false },
       { "type": "color", "id": "pq_background", "label": "Homepage background", "default": "#211f1e" },
       { "type": "color", "id": "pq_accent", "label": "Homepage accent", "default": "#f7c343" },
-      { "type": "url", "id": "pq_products_url", "label": "Products page", "default": "/pages/products" },
-      { "type": "url", "id": "pq_about_url", "label": "About Us page", "default": "/pages/about" },
-      { "type": "url", "id": "pq_partners_url", "label": "Partner With Us page", "default": "/pages/partners" },
-      { "type": "url", "id": "pq_terms_url", "label": "Terms of Service page", "default": "/pages/terms" }
+      { "type": "url", "id": "pq_products_url", "label": "Products page" },
+      { "type": "url", "id": "pq_about_url", "label": "About Us page" },
+      { "type": "url", "id": "pq_partners_url", "label": "Partner With Us page" },
+      { "type": "url", "id": "pq_terms_url", "label": "Terms of Service page" }
     ]
   },
   {
