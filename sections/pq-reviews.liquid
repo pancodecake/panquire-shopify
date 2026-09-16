@@ -1,0 +1,30 @@
+<section class="pq pq-section pq-reviews pq-reviews--{{ section.settings.layout }}" style="--pq-space: {{ section.settings.spacing }}px;" data-pq-carousel>
+  <div class="pq-container"><h2 class="pq-section-title">{{ section.settings.heading | escape }}</h2>{% if section.settings.text != blank %}<p class="pq-review-intro">{{ section.settings.text | escape }}</p>{% endif %}</div>
+  <div class="pq-review-track" data-pq-track>
+    {% for block in section.blocks %}
+      <article class="pq-review" data-pq-item {{ block.shopify_attributes }}>
+        <div class="pq-review-person"><div class="pq-review-avatar">{% assign media_label = 'panquire.reviewer_image' | t %}{% render 'pq-media', image: block.settings.image, label: media_label, sizes: '80px' %}</div><p>{% if block.settings.name != blank %}{{ block.settings.name | escape }}{% elsif section.settings.layout == 'expert' %}{{ 'panquire.sample_expert' | t }}{% else %}{{ 'panquire.sample_reviewer' | t }}{% endif %}</p></div>
+        {% if block.settings.quote != blank %}<blockquote>{{ block.settings.quote | escape }}</blockquote>{% else %}<p class="pq-review-empty">{% if section.settings.layout == 'expert' %}{{ 'panquire.expert_placeholder' | t }}{% else %}{{ 'panquire.review_placeholder' | t }}{% endif %}</p>{% endif %}
+      </article>
+    {% endfor %}
+  </div>
+  <div class="pq-container"><div class="pq-track-controls" data-pq-controls hidden><span class="pq-track-rule" aria-hidden="true"></span><button class="pq-square" type="button" data-pq-prev aria-label="{{ 'panquire.previous' | t }}">‹</button><button class="pq-square" type="button" data-pq-next aria-label="{{ 'panquire.next' | t }}">›</button></div></div>
+</section>
+{% schema %}
+{
+  "name": "Panquire reviews", "max_blocks": 10,
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "options": [{"value":"expert","label":"Featured expert review"},{"value":"riders","label":"Rider review cards"}], "default": "expert" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Independent perspectives" },
+    { "type": "text", "id": "text", "label": "Description", "default": "A space for independent reviews and rider experiences." },
+    { "type": "range", "id": "spacing", "label": "Section spacing", "min": 20, "max": 160, "step": 10, "unit": "px", "default": 90 }
+  ],
+  "blocks": [{ "type": "review", "name": "Review", "settings": [
+    { "type": "paragraph", "content": "Leave blank to display an explicit placeholder. Only add genuine reviews you have permission to publish." },
+    { "type": "image_picker", "id": "image", "label": "Reviewer image" },
+    { "type": "text", "id": "name", "label": "Reviewer name" },
+    { "type": "textarea", "id": "quote", "label": "Review" }
+  ] }],
+  "presets": [{ "name": "Panquire reviews", "blocks": [{"type":"review"},{"type":"review"},{"type":"review"}] }]
+}
+{% endschema %}

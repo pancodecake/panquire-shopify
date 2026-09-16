@@ -1,0 +1,17 @@
+<div class="pq pq-footer">
+  <div class="pq-container">
+    <a href="{{ routes.root_url }}" class="pq-wordmark pq-footer-brand">{{ settings.pq_store_name | default: 'Panquire' | escape }}</a>
+    {% if section.blocks.size > 0 %}<div class="pq-social-links">{% for block in section.blocks %}{% if block.settings.url != blank %}<a class="pq-button" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>{{ block.settings.label | escape }}</a>{% endif %}{% endfor %}</div>{% endif %}
+    <nav class="pq-footer-nav" aria-label="{{ 'panquire.footer_navigation' | t }}">{% render 'pq-navigation' %}</nav>
+    {% if section.settings.text != blank %}<p class="pq-footer-note">{{ section.settings.text | escape }}</p>{% endif %}
+    <div class="pq-footer-bottom"><span>© {{ 'now' | date: '%Y' }} {{ settings.pq_store_name | default: 'Panquire' | escape }}</span><a href="#MainContent">{{ 'panquire.back_to_top' | t }}</a></div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Panquire footer", "enabled_on": { "groups": ["footer"] }, "max_blocks": 5,
+  "settings": [{ "type": "textarea", "id": "text", "label": "Footer note" }],
+  "blocks": [{ "type": "social", "name": "Social link", "settings": [{"type":"text","id":"label","label":"Label","default":"Instagram"},{"type":"url","id":"url","label":"URL"}] }],
+  "presets": [{ "name": "Panquire footer" }]
+}
+{% endschema %}

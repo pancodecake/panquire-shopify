@@ -1,0 +1,38 @@
+<section class="pq pq-section pq-tiles pq-tiles--{{ section.settings.layout }}" style="--pq-space: {{ section.settings.spacing }}px; --pq-columns: {{ section.settings.columns }};" data-pq-carousel>
+  <div class="pq-container pq-tiles-layout">
+    {% if section.settings.heading != blank %}<div class="pq-tiles-intro"><h2 class="pq-section-title">{{ section.settings.heading | escape }}</h2>{% if section.settings.text != blank %}<p>{{ section.settings.text | escape }}</p>{% endif %}{% if section.settings.link != blank and section.settings.button != blank %}<a class="pq-button" href="{{ section.settings.link }}">{{ section.settings.button | escape }}</a>{% endif %}</div>{% endif %}
+    <div class="pq-tiles-content">
+      <div class="pq-tile-track" data-pq-track>
+        {% for block in section.blocks %}
+          <article class="pq-tile" data-pq-item {{ block.shopify_attributes }}>
+            <div class="pq-tile-image">{% assign media_label = 'panquire.image' | t %}{% render 'pq-media', image: block.settings.image, label: media_label, sizes: '(min-width: 1100px) 520px, (min-width: 700px) 45vw, 90vw' %}</div>
+            <div class="pq-tile-copy">{% if block.settings.caption != blank %}<p class="pq-caption">{{ block.settings.caption | escape }}</p>{% endif %}<h3>{% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{{ block.settings.heading | escape }}</a>{% else %}{{ block.settings.heading | escape }}{% endif %}</h3><p>{{ block.settings.text | escape }}</p></div>
+          </article>
+        {% endfor %}
+      </div>
+      {% if section.settings.layout == 'explore' %}<div class="pq-track-controls" data-pq-controls hidden><span class="pq-track-rule" aria-hidden="true"></span><button class="pq-square" type="button" data-pq-prev aria-label="{{ 'panquire.previous' | t }}">‹</button><button class="pq-square" type="button" data-pq-next aria-label="{{ 'panquire.next' | t }}">›</button></div>{% endif %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Panquire editorial tiles", "max_blocks": 8,
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "options": [{"value":"explore","label":"Intro and portrait cards"},{"value":"promos","label":"Two wide promotions"},{"value":"journal","label":"Journal cards"}], "default": "explore" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Explore more ways to ride" },
+    { "type": "textarea", "id": "text", "label": "Description" },
+    { "type": "text", "id": "button", "label": "Button label" },
+    { "type": "url", "id": "link", "label": "Button link" },
+    { "type": "range", "id": "columns", "label": "Columns", "min": 2, "max": 4, "step": 1, "default": 3 },
+    { "type": "range", "id": "spacing", "label": "Section spacing", "min": 20, "max": 160, "step": 10, "unit": "px", "default": 70 }
+  ],
+  "blocks": [{ "type": "tile", "name": "Editorial tile", "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "caption", "label": "Caption" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Everyday adventures" },
+    { "type": "textarea", "id": "text", "label": "Description", "default": "More from Panquire, coming soon." },
+    { "type": "url", "id": "link", "label": "Link" }
+  ] }],
+  "presets": [{ "name": "Panquire editorial tiles", "blocks": [{"type":"tile"},{"type":"tile"},{"type":"tile"}] }]
+}
+{% endschema %}

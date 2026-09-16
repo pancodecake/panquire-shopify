@@ -1,0 +1,21 @@
+{% doc %}
+  Renders an optional merchant image or a decorative neutral placeholder.
+  @param {image} [image] - Merchant-selected image.
+  @param {string} [label] - Placeholder label.
+  @param {boolean} [eager] - Prioritize above-fold media.
+  @param {string} [sizes] - Responsive image sizes.
+{% enddoc %}
+{% if image != blank %}
+  {% liquid
+    assign loading = 'lazy'
+    assign priority = 'auto'
+    if eager
+      assign loading = 'eager'
+      assign priority = 'high'
+    endif
+    assign image_sizes = sizes | default: '(min-width: 1100px) 1050px, 100vw'
+  %}
+  {{ image | image_url: width: 2400 | image_tag: widths: '320, 480, 750, 1050, 1500, 1992, 2400', sizes: image_sizes, loading: loading, fetchpriority: priority, class: 'pq-image' }}
+{% else %}
+  <div class="pq-placeholder" aria-hidden="true"><span>{{ label | default: 'Image' | escape }}</span></div>
+{% endif %}

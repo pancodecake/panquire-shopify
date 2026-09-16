@@ -1,0 +1,24 @@
+<section class="pq pq-newsletter">
+  <div class="pq-gallery" aria-hidden="true">{% for block in section.blocks %}<div class="pq-gallery-image" {{ block.shopify_attributes }}>{% assign media_label = 'panquire.gallery_image' | t %}{% render 'pq-media', image: block.settings.image, label: media_label, sizes: '(min-width: 700px) 33vw, 50vw' %}</div>{% endfor %}</div>
+  <div class="pq-newsletter-panel"><h2>{{ section.settings.heading | escape }}</h2><p>{{ section.settings.text | escape }}</p>
+    {% assign form_id = 'Newsletter-' | append: section.id %}
+    {% form 'customer', id: form_id, class: 'pq-newsletter-form' %}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <label for="Email-{{ section.id }}">{{ 'panquire.email' | t }}</label>
+      <div class="pq-email-row"><input id="Email-{{ section.id }}" type="email" name="contact[email]" value="{{ form.email | escape }}" required autocomplete="email" autocorrect="off" autocapitalize="off"{% if form.errors %} aria-invalid="true" aria-describedby="EmailError-{{ section.id }}"{% endif %}><button type="submit" aria-label="{{ 'panquire.subscribe' | t }}">{% render 'pq-icon', name: 'arrow' %}</button></div>
+      {% if form.errors %}<div id="EmailError-{{ section.id }}" role="alert"><p>{{ 'panquire.email_error' | t }}</p>{{ form.errors | default_errors }}</div>{% endif %}
+      {% if form.posted_successfully? %}<p role="status">{{ 'panquire.subscribed' | t }}</p>{% endif %}
+    {% endform %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Panquire gallery signup", "max_blocks": 6,
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Subscribe to our newsletter" },
+    { "type": "text", "id": "text", "label": "Description", "default": "Keep up with new arrivals and news from Panquire." }
+  ],
+  "blocks": [{ "type": "image", "name": "Gallery image", "settings": [{ "type": "image_picker", "id": "image", "label": "Image" }] }],
+  "presets": [{ "name": "Panquire gallery signup", "blocks": [{"type":"image"},{"type":"image"},{"type":"image"},{"type":"image"},{"type":"image"},{"type":"image"}] }]
+}
+{% endschema %}

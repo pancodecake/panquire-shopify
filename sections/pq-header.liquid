@@ -1,0 +1,28 @@
+{% style %}
+  :root { --pq-bg: {{ settings.pq_background | default: '#211f1e' }}; --pq-accent: {{ settings.pq_accent | default: '#f7c343' }}; }
+  #shopify-section-{{ section.id }} { position: sticky; top: 0; z-index: 30; }
+{% endstyle %}
+<header class="pq pq-header">
+  {% if section.settings.announcement != blank %}<div class="pq-announcement">{{ section.settings.announcement | escape }}</div>{% endif %}
+  <div class="pq-header-row pq-container">
+    <a class="pq-wordmark" href="{{ routes.root_url }}">{{ settings.pq_store_name | default: 'Panquire' | escape }}</a>
+    <nav class="pq-desktop-nav" aria-label="{{ 'panquire.main_navigation' | t }}">{% render 'pq-navigation' %}</nav>
+    <div class="pq-header-actions">
+      <a class="pq-icon-button" href="{{ routes.search_url }}" aria-label="{{ 'panquire.search' | t }}">{% render 'pq-icon', name: 'search' %}</a>
+      {% if shop.customer_accounts_enabled %}<a class="pq-icon-button" href="{{ routes.account_url }}" aria-label="{{ 'panquire.account' | t }}">{% render 'pq-icon', name: 'account' %}</a>{% endif %}
+      <a class="pq-icon-button" href="{{ routes.cart_url }}" aria-label="{{ 'panquire.cart' | t }}">{% render 'pq-icon', name: 'cart' %}{% if cart.item_count > 0 %}<span class="pq-cart-count">{{ cart.item_count }}</span>{% endif %}</a>
+    </div>
+    <details class="pq-mobile-menu">
+      <summary>{{ 'panquire.menu' | t }}</summary>
+      <nav aria-label="{{ 'panquire.main_navigation' | t }}">{% render 'pq-navigation' %}</nav>
+    </details>
+  </div>
+</header>
+{% schema %}
+{
+  "name": "Panquire header",
+  "enabled_on": { "groups": ["header"] },
+  "settings": [{ "type": "text", "id": "announcement", "label": "Announcement", "default": "Welcome to Panquire" }],
+  "presets": [{ "name": "Panquire header" }]
+}
+{% endschema %}

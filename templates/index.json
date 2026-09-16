@@ -1,285 +1,461 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */{
+{
   "sections": {
-    "hero_jVaWmY": {
-      "type": "hero",
+    "hero": {
+      "type": "pq-hero",
+      "settings": {
+        "label": "Featured collections",
+        "aspect_ratio": 2.2
+      },
       "blocks": {
-        "text_YLPk4p": {
-          "type": "text",
-          "name": "t:names.heading",
+        "item1": {
+          "type": "slide",
           "settings": {
-            "text": "<p>Browse our latest products</p>",
-            "text_color": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "kicker": "Introducing Panquire",
+            "heading": "Go small. Ride big.",
+            "text": "Find your next adventure.",
+            "button": "Explore products",
+            "link": "/pages/products",
+            "text_color": "#211f1e"
+          }
         },
-        "button_H9gpTf": {
-          "type": "button",
-          "name": "t:names.button",
+        "item2": {
+          "type": "slide",
           "settings": {
-            "label": "Shop all",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button-custom",
-            "custom_button_background": "rgba(0,0,0,0)",
-            "custom_button_text": "{{ settings.color_palette.background }}",
-            "custom_button_border": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
+            "kicker": "The Panquire collection",
+            "heading": "Make every ride yours.",
+            "text": "New possibilities. Every day.",
+            "button": "Explore products",
+            "link": "/pages/products",
+            "text_color": "#211f1e"
+          }
+        },
+        "item3": {
+          "type": "slide",
+          "settings": {
+            "kicker": "Meet Panquire",
+            "heading": "A new direction.",
+            "text": "Discover the story behind the ride.",
+            "button": "About Us",
+            "link": "/pages/about",
+            "text_color": "#211f1e"
+          }
         }
       },
       "block_order": [
-        "text_YLPk4p",
-        "button_H9gpTf"
-      ],
-      "name": "t:names.hero",
-      "settings": {
-        "media_type_1": "image",
-        "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
-        "media_type_1_mobile": "image",
-        "media_type_2_mobile": "image",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
-        "vertical_alignment": "flex-end",
-        "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 24,
-        "section_width": "page-width",
-        "section_height": "medium",
-        "section_height_custom": 50,
-        "background_color": "rgba(0,0,0,0)",
-        "toggle_overlay": true,
-        "overlay_color": "#12121266",
-        "overlay_style": "solid",
-        "gradient_direction": "to bottom",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
-        "padding-block-start": 100,
-        "padding-block-end": 72
-      }
+        "item1",
+        "item2",
+        "item3"
+      ]
     },
-    "product_list_fa6P9H": {
-      "type": "product-list",
+    "benefits": {
+      "type": "pq-benefits",
+      "settings": {},
       "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
+        "item1": {
+          "type": "benefit",
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
+            "heading": "Delivery",
+            "text": "Delivery details coming soon."
+          }
         },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
+        "item2": {
+          "type": "benefit",
           "settings": {
-            "product_card_gap": 4,
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
-          ]
+            "heading": "Returns",
+            "text": "Returns details coming soon."
+          }
+        },
+        "item3": {
+          "type": "benefit",
+          "settings": {
+            "heading": "Warranty",
+            "text": "Warranty details coming soon."
+          }
+        },
+        "item4": {
+          "type": "benefit",
+          "settings": {
+            "heading": "Rider support",
+            "text": "Rider support details coming soon."
+          }
         }
       },
-      "name": "t:names.product_list",
+      "block_order": [
+        "item1",
+        "item2",
+        "item3",
+        "item4"
+      ]
+    },
+    "feature": {
+      "type": "pq-feature",
       "settings": {
-        "collection": "all",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
+        "heading": "Adventure",
+        "subtitle": "Find your next ride",
+        "show_campaign": true,
+        "campaign_height": 1000,
+        "spacing": 70
+      },
+      "blocks": {
+        "item1": {
+          "type": "model",
+          "settings": {
+            "model": "Model 01",
+            "heading": "Everyday adventure",
+            "text": "Meet the upcoming Panquire collection. Product details will be shared here.",
+            "label_1": "Performance",
+            "value_1": "Coming soon",
+            "label_2": "Power",
+            "value_2": "Coming soon",
+            "label_3": "Range",
+            "value_3": "Coming soon"
+          }
+        },
+        "item2": {
+          "type": "model",
+          "settings": {
+            "model": "Model 02",
+            "heading": "Go further",
+            "text": "Meet the upcoming Panquire collection. Product details will be shared here.",
+            "label_1": "Performance",
+            "value_1": "Coming soon",
+            "label_2": "Power",
+            "value_2": "Coming soon",
+            "label_3": "Range",
+            "value_3": "Coming soon"
+          }
+        },
+        "item3": {
+          "type": "model",
+          "settings": {
+            "model": "Model 03",
+            "heading": "City explorer",
+            "text": "Meet the upcoming Panquire collection. Product details will be shared here.",
+            "label_1": "Performance",
+            "value_1": "Coming soon",
+            "label_2": "Power",
+            "value_2": "Coming soon",
+            "label_3": "Range",
+            "value_3": "Coming soon"
+          }
+        },
+        "item4": {
+          "type": "model",
+          "settings": {
+            "model": "Model 04",
+            "heading": "Street ready",
+            "text": "Meet the upcoming Panquire collection. Product details will be shared here.",
+            "label_1": "Performance",
+            "value_1": "Coming soon",
+            "label_2": "Power",
+            "value_2": "Coming soon",
+            "label_3": "Range",
+            "value_3": "Coming soon"
+          }
+        },
+        "item5": {
+          "type": "model",
+          "settings": {
+            "model": "Model 05",
+            "heading": "Compact fun",
+            "text": "Meet the upcoming Panquire collection. Product details will be shared here.",
+            "label_1": "Performance",
+            "value_1": "Coming soon",
+            "label_2": "Power",
+            "value_2": "Coming soon",
+            "label_3": "Range",
+            "value_3": "Coming soon"
+          }
+        }
+      },
+      "block_order": [
+        "item1",
+        "item2",
+        "item3",
+        "item4",
+        "item5"
+      ]
+    },
+    "products": {
+      "type": "pq-products",
+      "settings": {
+        "heading": "Discover",
+        "subtitle": "The Panquire collection",
+        "columns": 3,
+        "spacing": 50
+      },
+      "blocks": {
+        "item1": {
+          "type": "product",
+          "settings": {
+            "title": "Panquire 01",
+            "subtitle": "A new way to ride",
+            "details": "Specifications coming soon"
+          }
+        },
+        "item2": {
+          "type": "product",
+          "settings": {
+            "title": "Panquire 02",
+            "subtitle": "A new way to ride",
+            "details": "Specifications coming soon"
+          }
+        },
+        "item3": {
+          "type": "product",
+          "settings": {
+            "title": "Panquire 03",
+            "subtitle": "A new way to ride",
+            "details": "Specifications coming soon"
+          }
+        },
+        "item4": {
+          "type": "product",
+          "settings": {
+            "title": "Panquire 04",
+            "subtitle": "A new way to ride",
+            "details": "Specifications coming soon"
+          }
+        }
+      },
+      "block_order": [
+        "item1",
+        "item2",
+        "item3",
+        "item4"
+      ]
+    },
+    "explore": {
+      "type": "pq-tiles",
+      "settings": {
+        "layout": "explore",
+        "heading": "Explore more ways to ride",
+        "text": "From daily journeys to weekend adventures. Find your own way with Panquire.",
+        "button": "Explore products",
+        "link": "/pages/products",
+        "columns": 3,
+        "spacing": 70
+      },
+      "blocks": {
+        "item1": {
+          "type": "tile",
+          "settings": {
+            "heading": "Everyday rides",
+            "text": "Explore the collection",
+            "link": "/pages/products"
+          }
+        },
+        "item2": {
+          "type": "tile",
+          "settings": {
+            "heading": "Urban adventures",
+            "text": "Explore the collection",
+            "link": "/pages/products"
+          }
+        },
+        "item3": {
+          "type": "tile",
+          "settings": {
+            "heading": "New directions",
+            "text": "Explore the collection",
+            "link": "/pages/products"
+          }
+        }
+      },
+      "block_order": [
+        "item1",
+        "item2",
+        "item3"
+      ]
+    },
+    "experts": {
+      "type": "pq-reviews",
+      "settings": {
+        "layout": "expert",
+        "heading": "Independent perspectives",
+        "text": "A space for independent reviews and rider experiences.",
+        "spacing": 90
+      },
+      "blocks": {
+        "item1": {
+          "type": "review",
+          "settings": {}
+        },
+        "item2": {
+          "type": "review",
+          "settings": {}
+        },
+        "item3": {
+          "type": "review",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "item1",
+        "item2",
+        "item3"
+      ]
+    },
+    "promotions": {
+      "type": "pq-tiles",
+      "settings": {
+        "layout": "promos",
+        "heading": "",
+        "columns": 2,
+        "spacing": 60
+      },
+      "blocks": {
+        "item1": {
+          "type": "tile",
+          "settings": {
+            "heading": "Ways to make it yours",
+            "text": "Payment information will be available here."
+          }
+        },
+        "item2": {
+          "type": "tile",
+          "settings": {
+            "heading": "Support for your journey",
+            "text": "Warranty and support information coming soon."
+          }
+        }
+      },
+      "block_order": [
+        "item1",
+        "item2"
+      ]
+    },
+    "riders": {
+      "type": "pq-reviews",
+      "settings": {
+        "layout": "riders",
+        "heading": "The Panquire community",
+        "text": "",
+        "spacing": 50
+      },
+      "blocks": {
+        "item1": {
+          "type": "review",
+          "settings": {}
+        },
+        "item2": {
+          "type": "review",
+          "settings": {}
+        },
+        "item3": {
+          "type": "review",
+          "settings": {}
+        },
+        "item4": {
+          "type": "review",
+          "settings": {}
+        },
+        "item5": {
+          "type": "review",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "item1",
+        "item2",
+        "item3",
+        "item4",
+        "item5"
+      ]
+    },
+    "journal": {
+      "type": "pq-tiles",
+      "settings": {
+        "layout": "journal",
+        "heading": "From the journal",
+        "text": "",
+        "columns": 3,
+        "spacing": 60
+      },
+      "blocks": {
+        "item1": {
+          "type": "tile",
+          "settings": {
+            "heading": "Getting ready for your first ride",
+            "caption": "Coming soon",
+            "text": "Stories and guides from Panquire."
+          }
+        },
+        "item2": {
+          "type": "tile",
+          "settings": {
+            "heading": "Finding your everyday route",
+            "caption": "Coming soon",
+            "text": "Stories and guides from Panquire."
+          }
+        },
+        "item3": {
+          "type": "tile",
+          "settings": {
+            "heading": "Looking after your ride",
+            "caption": "Coming soon",
+            "text": "Stories and guides from Panquire."
+          }
+        }
+      },
+      "block_order": [
+        "item1",
+        "item2",
+        "item3"
+      ]
+    },
+    "newsletter": {
+      "type": "pq-newsletter",
+      "settings": {
+        "heading": "Subscribe to our newsletter",
+        "text": "Keep up with new arrivals and news from Panquire."
+      },
+      "blocks": {
+        "item1": {
+          "type": "image",
+          "settings": {}
+        },
+        "item2": {
+          "type": "image",
+          "settings": {}
+        },
+        "item3": {
+          "type": "image",
+          "settings": {}
+        },
+        "item4": {
+          "type": "image",
+          "settings": {}
+        },
+        "item5": {
+          "type": "image",
+          "settings": {}
+        },
+        "item6": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "item1",
+        "item2",
+        "item3",
+        "item4",
+        "item5",
+        "item6"
+      ]
     }
   },
   "order": [
-    "hero_jVaWmY",
-    "product_list_fa6P9H"
+    "hero",
+    "benefits",
+    "feature",
+    "products",
+    "explore",
+    "experts",
+    "promotions",
+    "riders",
+    "journal",
+    "newsletter"
   ]
 }
